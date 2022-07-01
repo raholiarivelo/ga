@@ -6,7 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@main
         id: slack
-        uses: raholiarivelo/ga@main
         with:
           # Slack channel id, channel name, or user id to post message.
           # See also: https://api.slack.com/methods/chat.postMessage#channels
