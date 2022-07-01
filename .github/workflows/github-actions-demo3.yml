@@ -4,7 +4,6 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Post to a Slack channel
       - uses: actions/checkout@main
         id: slack
         uses: raholiarivelo/ga@main
