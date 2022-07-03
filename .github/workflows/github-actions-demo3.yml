@@ -1,9 +1,14 @@
 name: GitHub Actions Demo 3
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  name: Slack Notification Demo
+jobs:
+  slackNotification:
+    name: Slack Notification
     runs-on: ubuntu-latest
     steps:
-      - name: Post to a Slack channel
-      - uses: actions/checkout@v3
-      - run: curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses:  raholiarivelo/ga@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
