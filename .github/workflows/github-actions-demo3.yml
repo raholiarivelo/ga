@@ -5,13 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Post to a Slack channel
-        id: slack
-        uses: raholiarivelo/ga@main
-        with:
-          # Slack channel id, channel name, or user id to post message.
-          # See also: https://api.slack.com/methods/chat.postMessage#channels
-          channel-id: 'DKYMKTD8E'
-          # For posting a simple plain text message
-          slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      - uses: actions/checkout@v3
+      - run: curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
