@@ -1,9 +1,11 @@
 name: GitHub Actions Demo 3
 on: [push]
 jobs:
-  slackNotification:
-    - name: Send GitHub Action trigger data to Slack workflow
-        id: slack
-        uses: /ga@main
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send GitHub Action trigger data to Slack workflow
+      - id: slack
+      - uses: actions/setup-node@v3
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
