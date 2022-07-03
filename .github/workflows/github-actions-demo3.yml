@@ -3,7 +3,7 @@ on: [push]
 jobs:
   slackNotification:
     - name: Send GitHub Action trigger data to Slack workflow
-      id: slack
-      uses: /ga@main
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+        id: slack
+        uses: /ga@main
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
