@@ -1,11 +1,12 @@
-name: GitHub Actions Demo 3
+name: Slack Push Notification
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  slack-send-notification:
     runs-on: ubuntu-latest
     steps:
-      - name: Send GitHub Action trigger data to Slack workflow
-      - id: slack
-      - uses: actions/setup-node@v3
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Slack Notification
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"New push on: ${{github.repository}}"}' ${{secrets.SLACK_WEBHOOK}}
