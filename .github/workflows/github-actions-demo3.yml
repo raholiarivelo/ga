@@ -9,5 +9,5 @@ jobs:
 
       - name: Slack Notification
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"New push on: ${{github.repository}}"}' ${{secrets.SLACK_WEBHOOK}}
-          
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"hello: ${{github.repository}}"}' ${{secrets.SLACK_WEBHOOK}}
+
